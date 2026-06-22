@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "seao": {
+      "command": ".venv/bin/python",
+      "args": ["seao_mcp_server.py"]
+    }
+  }
+}

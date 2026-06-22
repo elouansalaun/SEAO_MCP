@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data — generated/downloaded, not versioned (raw dumps are multi-GB)
+DATA/*.json
+DATA/*.db
+DATA/*.db-wal
+DATA/*.db-shm
+
+# Local tooling / editor state
+.DS_Store
+.idea/
+.vscode/

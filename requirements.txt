@@ -1,0 +1,8 @@
+# MCP server (seao_mcp_server.py) — Model Context Protocol SDK:
+mcp>=1.0
+
+# Data fetcher (fetch_seao_opendata.py) — HTTP downloads:
+requests>=2.28
+
+# Note: the build pipeline (build_raw_json_db.py, build_work_sqlite_db.py)
+# uses only the Python standard library.
