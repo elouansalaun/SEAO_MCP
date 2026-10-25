@@ -1,27 +1,4 @@
-"""SEAO procurement-intelligence MCP server.
-
-A read-only Model Context Protocol server over ``DATA/seao.db`` (Quebec SEAO
-public-procurement open data, focused on security services). It gives an LLM
-analyst a *hybrid* tool surface:
-
-* a flexible core  -- ``describe_schema``, ``run_sql``, ``search_processes`` --
-  for the long tail of ad-hoc questions, and
-* curated analytical tools -- ``supplier_profile``, ``head_to_head``,
-  ``price_benchmark``, ``incumbent``, ``buyer_profile``, ``market_overview`` --
-  that bake in the three things a naive SQL query gets wrong on this data:
-
-  1. **Supplier identity is the NEQ, not the name.** The same firm appears under
-     many name spellings (e.g. Garda = 7 variants). Every supplier metric here is
-     grouped on ``party.neq``, resolved from a name or NEQ via :func:`resolve_supplier`.
-  2. **Win/loss is derived**, not stored: a bidder won a process iff its
-     ``(ocid, party_id)`` appears in ``award_supplier`` for that process.
-  3. **Direct (gre a gre) contracts have no bids** -- they are sole-sourced, so
-     win-rate / margin analysis only applies to ``open`` and ``limited`` tenders.
-
-All amounts are CAD. Run with:  ``python seao_mcp_server.py``  (stdio transport).
-The DB path defaults to ``DATA/seao.db`` next to this file; override with the
-``SEAO_DB_PATH`` environment variable.
-"""
+"""SEAO procurement-intelligence MCP server."""
 
 from __future__ import annotations
 

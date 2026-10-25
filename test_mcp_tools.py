@@ -1,5 +1,5 @@
 """Smoke-test every SEAO MCP tool against DATA/seao.db using the analyst's own
-example questions. Run: python test_mcp_tools.py"""
+example questions"""
 
 import seao_mcp_server as s
 

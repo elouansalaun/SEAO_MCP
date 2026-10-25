@@ -1,16 +1,4 @@
-"""Transform the OCDS ``filtered_records.json`` into a query-ready SQLite database.
-
-The SEAO open data is published as Open Contracting Data Standard (OCDS) releases
-with the ``ocds_lots_extension``. That nested JSON is great for storage but poor
-for querying. This script normalizes it into a relational schema and adds an FTS5
-full-text index, convenience views and a machine-readable data dictionary so the
-database can be queried directly by an LLM through a generic SQLite MCP server.
-
-Usage:
-    python build_work_sqlite_db.py [input.json] [output.db]
-
-Defaults: input = DATA/filtered_records.json, output = DATA/seao.db
-"""
+"""Transform the OCDS ``filtered_records.json`` into a query-ready SQLite database."""
 
 import argparse
 import json
